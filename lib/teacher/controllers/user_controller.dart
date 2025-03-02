@@ -22,4 +22,8 @@ class TeachersUserController with ChangeNotifier {
     _isLoading = false;
     notifyListeners();
   }
+
+  Future<bool> checkUserStatus(String id) async {
+    return await _userRepository.checkUserStatus(id);
+  }
 }

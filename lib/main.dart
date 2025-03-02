@@ -12,7 +12,7 @@ import 'package:studylink/teacher/controllers/auth_controller.dart';
 import 'package:studylink/teacher/controllers/home_controller.dart';
 
 import 'auth/controllers/auth_controller.dart';
-import 'dashboard/splash/splash_screen.dart';
+import 'splash/splash_screen.dart';
 import 'teacher/controllers/user_controller.dart';
 
 void main() async {
@@ -20,9 +20,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-    print("📢 New Notification: ${message.notification?.title}");
-  });
+
 
   runApp(const MyApp());
 }

@@ -39,32 +39,7 @@ class _CompleteScreenState extends State<CompleteScreen> {
     phoneNumber.dispose();
   }
 
-  // void storeData(BuildContext context) async {
-  //   UserModel userModel = UserModel(
-  //     uid: "",
-  //     name: nameController.text.trim(),
-  //     email: emailController.text.trim(),
-  //     phoneNumber: phoneNumber.text.trim(),
-  //     department: selectedDepartment,
-  //   );
-  //   authProvider.saveUserDataToFirebase(
-  //     context: context,
-  //     userModel: userModel,
-  //     onSuccess: () {
-  //       authProvider
-  //           .saveUserDataToSP()
-  //           .then((value) => authProvider.setSignIn().then(
-  //                 (value) => Navigator.pushAndRemoveUntil(
-  //                   context,
-  //                   MaterialPageRoute(
-  //                     builder: (context) => const HomeScreen(),
-  //                   ),
-  //                   (route) => false,
-  //                 ),
-  //               ));
-  //     },
-  //   );
-  // }
+
 
   void _saveProfile(BuildContext context) async {
     final authProvider =
@@ -80,21 +55,7 @@ class _CompleteScreenState extends State<CompleteScreen> {
       approval: false,
     );
 
-    // if (authProvider. == null) {
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     const SnackBar(content: Text('User not logged in.')),
-    //   );
-    //   return;
-    // }
-
-    // if (nameController.text.isEmpty ||
-    //     phoneNumber.text.isEmpty ||
-    //     selectedDepartment == null) {
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     const SnackBar(content: Text('All fields are required.')),
-    //   );
-    //   return;
-    // }
+   
 
     authProvider.saveUserDataToFirebase(
       context: context,
@@ -145,24 +106,6 @@ class _CompleteScreenState extends State<CompleteScreen> {
         );
       },
     );
-
-    // await FirebaseFirestore.instance
-    //     .collection('teachers')
-    //     .doc(user.uid)
-    //     .set({
-    //   'name': nameController.text.trim(),
-    //   'phone': phoneNumber.text.trim(),
-    //   'department': selectedDepartment,
-    //   'email': user.email,
-    //   'isApproved': false, // Approval will be handled by admin
-    // });
-
-    // ScaffoldMessenger.of(context).showSnackBar(
-    //   const SnackBar(
-    //       content: Text('Profile saved! Awaiting admin approval.')),
-    // );
-
-    //  Navigator.pushReplacementNamed(context, '/home');
   }
 
   @override
@@ -253,26 +196,6 @@ class _CompleteScreenState extends State<CompleteScreen> {
                       return null;
                     },
                   ),
-                  // CustomDropdownWidget(
-                  //   title: "Year of Admission",
-                  //   hintText: "Year of Admission",
-                  //   value: selectedYear,
-                  //   onChanged: (value) {
-                  //     selectedYear = value;
-                  //   },
-                  //   items: Utils.yearOfAdmission
-                  //       .map(
-                  //         (e) => DropdownMenuItem(
-                  //             value: e.value, child: Text(e.label!)),
-                  //       )
-                  //       .toList(),
-                  //   validator: (val) {
-                  //     if (val == null) {
-                  //       return "Select a Grade";
-                  //     }
-                  //     return null;
-                  //   },
-                  // ),
                   const SizedBox(height: 20),
                   // Submit button
                   _isLoading

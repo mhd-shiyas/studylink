@@ -83,20 +83,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       : null,
                 ),
               ),
-              // TextField(
-              //   controller: emailController,
-              //   decoration: const InputDecoration(labelText: "Enter your email"),
-              // ),
-              // const SizedBox(height: 20),
-              // ElevatedButton(
-              //   onPressed: () {
-              //     authProvider.resetPassword(
-              //       context: context,
-              //       email: emailController.text.trim(),
-              //     );
-              //   },
-              //   child: const Text("Reset Password"),
-              // ),
             ],
           ),
         ),

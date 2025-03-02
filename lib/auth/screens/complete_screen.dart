@@ -211,26 +211,6 @@ class _CompleteScreenState extends State<CompleteScreen> {
                       ),
                     ],
                   ),
-                  // CustomDropdownWidget(
-                  //   title: "Year of Admission",
-                  //   hintText: "Year of Admission",
-                  //   value: selectedYear,
-                  //   onChanged: (value) {
-                  //     selectedYear = value;
-                  //   },
-                  //   items: Utils.yearOfAdmission
-                  //       .map(
-                  //         (e) => DropdownMenuItem(
-                  //             value: e.value, child: Text(e.label!)),
-                  //       )
-                  //       .toList(),
-                  //   validator: (val) {
-                  //     if (val == null) {
-                  //       return "Select a Grade";
-                  //     }
-                  //     return null;
-                  //   },
-                  // ),
                   const SizedBox(height: 20),
                   // Submit button
                   SizedBox(

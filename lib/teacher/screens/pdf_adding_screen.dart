@@ -71,81 +71,7 @@ class _PdfAddingScreenState extends State<PdfAddingScreen> {
     }
   }
 
-//   Future<void> _uploadModule(TeachersHomeController controller) async {
-//   if (_titleController.text.isEmpty || _descriptionController.text.isEmpty) {
-//     ScaffoldMessenger.of(context).showSnackBar(
-//       const SnackBar(content: Text('Please fill all required fields')),
-//     );
-//     return;
-//   }
 
-//   final authProvider = Provider.of<TeachersUserController>(context, listen: false);
-
-//   // Ensure only one type of upload is selected
-//   if ((_selectedFileType == 'YouTube Video Link' && _youtubeLinkController.text.isNotEmpty) &&
-//       _fileData != null) {
-//     ScaffoldMessenger.of(context).showSnackBar(
-//       const SnackBar(content: Text('Please upload either a YouTube link OR a file, not both')),
-//     );
-//     return;
-//   }
-
-//   if (_selectedFileType == 'YouTube Video Link') {
-//     // Validate YouTube Link
-//     if (_youtubeLinkController.text.isEmpty || !_youtubeLinkController.text.contains('youtube.com')) {
-//       ScaffoldMessenger.of(context).showSnackBar(
-//         const SnackBar(content: Text('Please enter a valid YouTube link')),
-//       );
-//       return;
-//     }
-
-//     try {
-//       await controller.uploadYouTubeLink(
-//         teacherId: user!.uid,
-//         teacherName: authProvider.user?.name ?? '',
-//         title: _titleController.text,
-//         description: _descriptionController.text,
-//         youtubeLink: _youtubeLinkController.text, // Uploading only YouTube link
-//       );
-//       ScaffoldMessenger.of(context).showSnackBar(
-//         const SnackBar(content: Text('YouTube link uploaded successfully')),
-//       );
-//     } catch (e) {
-//       ScaffoldMessenger.of(context).showSnackBar(
-//         SnackBar(content: Text('Error uploading YouTube link: $e')),
-//       );
-//     }
-//   } else {
-//     // Handle File Upload (Notes or PYQP)
-//     if (_fileData == null) {
-//       ScaffoldMessenger.of(context).showSnackBar(
-//         const SnackBar(content: Text('Please upload a file')),
-//       );
-//       return;
-//     }
-
-//     try {
-//       await controller.uploadFile(
-//         teacherId: user!.uid,
-//         teacherName: authProvider.user?.name ?? '',
-//         title: _titleController.text,
-//         description: _descriptionController.text,
-//         subjectId: widget.subjectId,
-//         fileData: _fileData!,
-//         fileName: _fileName!,
-//         // youtubeLink: youtubeLinkController.text,
-//         fileType: _selectedFileType!,
-//       );
-//       ScaffoldMessenger.of(context).showSnackBar(
-//         const SnackBar(content: Text('File uploaded successfully')),
-//       );
-//     } catch (e) {
-//       ScaffoldMessenger.of(context).showSnackBar(
-//         SnackBar(content: Text('Error uploading file: $e')),
-//       );
-//     }
-//   }
-// }
 
   Future<void> _uploadModule(TeachersHomeController controller) async {
     if (_titleController.text.isEmpty ||
@@ -360,12 +286,7 @@ class _PdfAddingScreenState extends State<PdfAddingScreen> {
                               title: "Upload",
                               onTap: () => _uploadModule(controller),
                             )),
-              // controller.isLoading
-              //     ? const Center(child: CircularProgressIndicator())
-              //     : ElevatedButton(
-              //         onPressed: () => _uploadModule(controller),
-              //         child: const Text('Upload'),
-              //       ),
+             
             ],
           ),
         ),

@@ -155,21 +155,6 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                 ],
               ),
-              // TextField(
-              //   controller: _emailController,
-              //   decoration: const InputDecoration(labelText: 'Email'),
-              // ),
-              // const SizedBox(height: 16),
-              // TextField(
-              //   controller: _passwordController,
-              //   decoration: const InputDecoration(labelText: 'Password'),
-              //   obscureText: true,
-              // ),
-              // const SizedBox(height: 24),
-              // ElevatedButton(
-              //   onPressed: () {},
-              //   child: const Text('Sign Up'),
-              // ),
             ],
           ),
         ),

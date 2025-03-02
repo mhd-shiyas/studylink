@@ -18,4 +18,16 @@ class UserRepository {
     }
     return null;
   }
+
+  Future<bool> checkUserStatus(String id) async {
+    DocumentSnapshot userDoc =
+        await _firebaseFirestore.collection('teachers').doc(id).get();
+
+    if (userDoc.exists && userDoc['approvel'] == true) {
+      return true;
+    } else {
+      // throw Exception('Your account is pending approvel or has been rejected.');
+      return false;
+    }
+  }
 }

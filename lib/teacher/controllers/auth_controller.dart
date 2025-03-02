@@ -144,15 +144,15 @@ class TeachersAuthenticationProvider with ChangeNotifier {
         password: password,
       );
       _uid = _firebaseAuth.currentUser?.uid;
-      DocumentSnapshot userDoc =
-          await _firebaseFirestore.collection('teachers').doc(_uid).get();
+      // DocumentSnapshot userDoc =
+      //     await _firebaseFirestore.collection('teachers').doc(_uid).get();
 
-      if (userDoc.exists && userDoc['approvel'] == true) {
-        notifyListeners();
-      } else {
-        throw Exception(
-            'Your account is pending approvel or has been rejected.');
-      }
+      // if (userDoc.exists && userDoc['approvel'] == true) {
+      //   notifyListeners();
+      // } else {
+      //   throw Exception(
+      //       'Your account is pending approvel or has been rejected.');
+      // }
       onSuccess();
 
       notifyListeners();
