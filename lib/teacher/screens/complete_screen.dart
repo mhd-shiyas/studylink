@@ -9,9 +9,6 @@ import 'package:studylink/teacher/controllers/auth_controller.dart';
 import 'package:studylink/teacher/core/utils.dart';
 import 'package:studylink/teacher/screens/login_screen.dart';
 
-
-
-
 import '../../auth/widgets/custom_button.dart';
 import '../models/user_model.dart';
 import '../widgets/custom_dropdown.dart';
@@ -39,8 +36,6 @@ class _CompleteScreenState extends State<CompleteScreen> {
     phoneNumber.dispose();
   }
 
-
-
   void _saveProfile(BuildContext context) async {
     final authProvider =
         Provider.of<TeachersAuthenticationProvider>(context, listen: false);
@@ -54,8 +49,6 @@ class _CompleteScreenState extends State<CompleteScreen> {
       department: selectedDepartment,
       approval: false,
     );
-
-   
 
     authProvider.saveUserDataToFirebase(
       context: context,

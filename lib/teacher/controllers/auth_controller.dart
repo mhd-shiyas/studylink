@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/utils.dart';
 
@@ -24,15 +23,9 @@ class TeachersAuthenticationProvider with ChangeNotifier {
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
-  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
 
   AuthenticationProvider() {
     checkSign();
-  }
-
-  void subscribeToApprovalNotification(String teacherId) async {
-    await _firebaseMessaging.subscribeToTopic("teacher_$teacherId");
-    print("✅ Subscribed to teacher approval notifications!");
   }
 
   void checkSign() async {
@@ -82,8 +75,6 @@ class TeachersAuthenticationProvider with ChangeNotifier {
         password: password,
       );
 
-      String teacherId = userCredential.user!.uid;
-      String? fcmToken = await _firebaseMessaging.getToken();
       // Add a pending request for admin approval
       await _firebaseFirestore
           .collection('teachers_pending_approvals')
@@ -91,8 +82,6 @@ class TeachersAuthenticationProvider with ChangeNotifier {
           .set({
         'email': email,
         'status': 'pending',
-        "teacherId": teacherId,
-        "fcmToken": fcmToken, // ✅ Store the FCM token
         'timestamp': FieldValue.serverTimestamp(),
       });
     } catch (e) {

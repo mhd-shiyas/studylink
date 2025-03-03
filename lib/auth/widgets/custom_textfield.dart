@@ -9,6 +9,7 @@ class CustomTextfield extends StatelessWidget {
   final Widget? prefix;
   final Widget? suffix;
   final TextStyle? fontStyle;
+  final TextInputType? keyboardType;
   final Function(String)? onChanged;
   final String? value;
 
@@ -21,6 +22,7 @@ class CustomTextfield extends StatelessWidget {
     this.suffix,
     this.onChanged,
     this.fontStyle,
+    this.keyboardType,
     this.value,
   });
 
@@ -41,6 +43,7 @@ class CustomTextfield extends StatelessWidget {
           height: 2,
         ),
         TextFormField(
+          keyboardType: keyboardType,
           initialValue: value,
           onChanged: onChanged,
           controller: controller,

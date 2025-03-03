@@ -17,7 +17,7 @@ class AuthenticationProvider with ChangeNotifier {
 
   String? _uid;
   String get uid => _uid!;
-    final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
+  final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
   UserModel? _userModel;
   UserModel get userModel => _userModel!;
@@ -141,12 +141,18 @@ class AuthenticationProvider with ChangeNotifier {
     return snapshot.exists;
   }
 
+  // Future<void> signOut() async {
+  //   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  //   await _firebaseAuth.signOut();
+  //   _isSignedIn = false;
+  //   notifyListeners();
+  //   sharedPreferences.clear();
+  // }
   Future<void> signOut() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     await _firebaseAuth.signOut();
     _isSignedIn = false;
+    await sharedPreferences.remove("is_signedin");
     notifyListeners();
-    sharedPreferences.clear();
   }
 }
-

@@ -130,13 +130,14 @@ class _CompleteScreenState extends State<CompleteScreen> {
                   CustomTextfield(
                     label: "Email",
                     hint: "Email",
-                    controller: emailController,
+                    // controller: emailController,
                     value: user!.email,
                   ),
                   const SizedBox(height: 15),
                   CustomTextfield(
                     label: "Phone Number",
                     hint: "Phone Number",
+                    keyboardType: TextInputType.number,
                     controller: phoneNumber,
                   ),
                   const SizedBox(height: 15),
@@ -176,15 +177,15 @@ class _CompleteScreenState extends State<CompleteScreen> {
                         activeColor: ColorConstants.primaryColor,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4)),
-                        value: selectedYear == '2019-2022',
+                        value: selectedYear == '2019-2023',
                         onChanged: (value) {
                           setState(() {
-                            selectedYear = value! ? '2019-2022' : null;
+                            selectedYear = value! ? '2019-2023' : null;
                           });
                         },
                       ),
                       const Text(
-                        '2019-2022',
+                        '2019-2023',
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
@@ -195,15 +196,15 @@ class _CompleteScreenState extends State<CompleteScreen> {
                         activeColor: ColorConstants.primaryColor,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4)),
-                        value: selectedYear == '2023-Current',
+                        value: selectedYear == '2024-Current',
                         onChanged: (value) {
                           setState(() {
-                            selectedYear = value! ? '2023-Current' : null;
+                            selectedYear = value! ? '2024-Current' : null;
                           });
                         },
                       ),
                       const Text(
-                        '2023-Current',
+                        '2024-Current',
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,

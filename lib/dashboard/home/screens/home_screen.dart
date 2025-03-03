@@ -10,10 +10,10 @@ import 'package:studylink/constants/color_constants.dart';
 import 'package:studylink/dashboard/home/controller/home_controller.dart';
 import 'package:studylink/dashboard/home/screens/liked_screen.dart';
 import 'package:studylink/dashboard/home/widgets/custom_drawer.dart';
-import 'package:studylink/dashboard/notes/screen/downloaded_notes_screen.dart';
 import 'package:studylink/dashboard/profile/screens/profile_screen.dart';
 
 import '../../gemini/gemini_chat_screen.dart';
+import '../../notes/screen/downloaded_notes_screen.dart';
 import '../../semesters/screens/semesters_screen.dart';
 
 class HomeScreen extends StatefulWidget {
