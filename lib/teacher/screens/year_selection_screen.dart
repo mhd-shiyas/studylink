@@ -9,7 +9,8 @@ class YearSelectionScreen extends StatelessWidget {
   final String departmentId;
   // final String departmentName;
 
-  const YearSelectionScreen({super.key, 
+  const YearSelectionScreen({
+    super.key,
     required this.departmentId,
   });
 
@@ -40,7 +41,7 @@ class YearSelectionScreen extends StatelessWidget {
                   )),
               title: Center(
                   child: Text(
-                '2019-2022',
+                '2019-2023',
                 style: GoogleFonts.poppins(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
@@ -51,7 +52,7 @@ class YearSelectionScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => SemesterListScreen(
-                      year: '2019-2022',
+                      year: '2019-2023',
                     ),
                   ),
                 );
@@ -69,7 +70,7 @@ class YearSelectionScreen extends StatelessWidget {
                   )),
               title: Center(
                 child: Text(
-                  '2023-Current',
+                  '2024-Current',
                   style: GoogleFonts.poppins(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
@@ -81,7 +82,7 @@ class YearSelectionScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => SemesterListScreen(
-                      year: '2023-Current',
+                      year: '20247-Current',
                     ),
                   ),
                 );
