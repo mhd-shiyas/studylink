@@ -24,19 +24,19 @@ class TeachersAuthenticationProvider with ChangeNotifier {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
-  AuthenticationProvider() {
+  TeachersAuthenticationProvider() {
     checkSign();
   }
 
   void checkSign() async {
     final SharedPreferences data = await SharedPreferences.getInstance();
-    _isSignedIn = data.getBool("is_signedin") ?? false;
+    _isSignedIn = data.getBool("is_teacher_signedin") ?? false;
     notifyListeners();
   }
 
   Future setSignIn() async {
     final SharedPreferences s = await SharedPreferences.getInstance();
-    s.setBool("is_signedin", true);
+    s.setBool("is_teacher_signedin", true);
     _isSignedIn = true;
     notifyListeners();
   }

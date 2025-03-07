@@ -82,7 +82,7 @@ class YearSelectionScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => SemesterListScreen(
-                      year: '20247-Current',
+                      year: '2024-Current',
                     ),
                   ),
                 );

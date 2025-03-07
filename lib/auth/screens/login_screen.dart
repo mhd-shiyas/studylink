@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
         context: context,
         onSuccess: () {
           authProvider.setSignIn().then((value) {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                 builder: (context) => HomeScreen(),
