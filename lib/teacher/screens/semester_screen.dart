@@ -8,9 +8,11 @@ import '../controllers/home_controller.dart';
 
 class SemesterListScreen extends StatefulWidget {
   final String year;
+  final String departmentId;
   const SemesterListScreen({
     super.key,
     required this.year,
+    required this.departmentId,
   });
 
   @override
@@ -26,7 +28,7 @@ class _SemesterListScreenState extends State<SemesterListScreen> {
 
   Future<void> fetchInitialData() async {
     Provider.of<TeachersHomeController>(context, listen: false)
-        .fetchSemesters(widget.year);
+        .fetchSemesters(widget.year, widget.departmentId);
   }
 
   @override

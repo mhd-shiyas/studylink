@@ -35,11 +35,11 @@ class TeachersHomeController extends ChangeNotifier {
   bool _semesterisLoading = false;
   bool get isSemesterLoading => _semesterisLoading;
 
-  Future<void> fetchSemesters(String year) async {
+  Future<void> fetchSemesters(String year,String departmentId) async {
     _semesterisLoading = true;
     notifyListeners();
 
-    _semesters = await _homeRepository.fetchSemesters(year);
+    _semesters = await _homeRepository.fetchSemesters(year,departmentId);
 
     _semesterisLoading = false;
     notifyListeners();

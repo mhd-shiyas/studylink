@@ -16,10 +16,12 @@ class HomeRepository {
     }
   }
 
-  Future<List<SemesterModel>> fetchSemesters(String year) async {
+  Future<List<SemesterModel>> fetchSemesters(
+      String year, String departmentId) async {
     try {
       final snapshot = await _firebaseFirestore
           .collection("semesters")
+          .where("dep_id", isEqualTo: departmentId)
           .where("year", isEqualTo: year)
           .get();
 

@@ -53,6 +53,7 @@ class YearSelectionScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => SemesterListScreen(
                       year: '2019-2023',
+                      departmentId: departmentId,
                     ),
                   ),
                 );
@@ -83,6 +84,7 @@ class YearSelectionScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => SemesterListScreen(
                       year: '2024-Current',
+                      departmentId: departmentId,
                     ),
                   ),
                 );
